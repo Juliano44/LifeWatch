@@ -1,0 +1,117 @@
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
+  padding: var(--space-8) var(--space-6);
+  border-radius: var(--radius-card);
+  background: linear-gradient(
+    120deg,
+    #EAF6FF 0%,
+    #E4FBFA 22%,
+    #F3F0FF 45%,
+    #FFE9F3 68%,
+    #FFF6EE 100%
+  );
+  position: relative;
+  overflow: hidden;
+}
+
+.profile-header::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+      circle at 15% 20%,
+      rgba(61, 184, 255, 0.25),
+      transparent 45%
+    ),
+    radial-gradient(circle at 85% 15%, rgba(255, 95, 158, 0.2), transparent 50%),
+    radial-gradient(circle at 60% 90%, rgba(10, 214, 214, 0.18), transparent 55%);
+  pointer-events: none;
+}
+
+.profile-header__menu-btn {
+  display: none;
+  background: rgba(255, 255, 255, 0.7);
+  border: none;
+  border-radius: var(--radius-pill);
+  width: 38px;
+  height: 38px;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: var(--text-primary);
+  cursor: pointer;
+  z-index: 1;
+  flex-shrink: 0;
+}
+
+.profile-header__avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent-purple), var(--accent-pink));
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  font-weight: 700;
+  flex-shrink: 0;
+  box-shadow: 0 6px 18px rgba(106, 107, 255, 0.35);
+  border: 3px solid rgba(255, 255, 255, 0.8);
+  z-index: 1;
+}
+
+.profile-header__info {
+  z-index: 1;
+  min-width: 0;
+}
+
+.profile-header__name {
+  margin: 0;
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
+}
+
+.profile-header__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  color: var(--accent-blue);
+  font-weight: 600;
+  font-size: 14.5px;
+}
+
+.profile-header__link:hover {
+  text-decoration: underline;
+}
+
+.profile-header__sync {
+  margin: var(--space-1) 0 0;
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 768px) {
+  .profile-header {
+    padding: var(--space-6) var(--space-4);
+    gap: var(--space-3);
+  }
+
+  .profile-header__menu-btn {
+    display: flex;
+  }
+
+  .profile-header__avatar {
+    width: 56px;
+    height: 56px;
+    font-size: 22px;
+  }
+
+  .profile-header__name {
+    font-size: 21px;
+  }
+}
